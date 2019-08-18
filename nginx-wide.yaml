@@ -1,12 +1,12 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: nginx
+  name: ngin
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 3 # tells deployment to run 2 pods matching the template
+  replicas: 5 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
@@ -18,4 +18,4 @@ spec:
         ports:
         - containerPort: 80
       nodeSelector:
-        env: "prod"
+        provider : "gcp"
